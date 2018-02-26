@@ -1,0 +1,10 @@
+{
+    "name": "laravelph/laravel-todo",
+    "authors": [
+        {
+            "name": "Reniel Salvador",
+            "email": "reniel.salvador@gmail.com"
+        }
+    ],
+    "require": {}
+}
