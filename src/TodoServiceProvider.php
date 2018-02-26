@@ -1,10 +1,10 @@
 <?php
 
-namespace RenielDev;
+namespace RenielDev\Todo;
 
 use Illuminate\Support\ServiceProvider;
 
-class ServiceProvider extends ServiceProvider
+class TodoServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -13,7 +13,8 @@ class ServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        include __DIR__.'/routes.php';
+        $this->app->make('RenielDev\Todo\TodoController');
     }
 
     /**
