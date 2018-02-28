@@ -15,6 +15,24 @@ class TodoServiceProvider extends ServiceProvider
     {
         include __DIR__.'/routes.php';
         $this->app->make('RenielDev\Todo\TodoController');
+
+        if ($this->app->runningInConsole()) {
+            $this->registerMigrations();
+        }
+    }
+
+    /**
+     * Register Passport's migration files.
+     *
+     * @return void
+     */
+    protected function registerMigrations()
+    {
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+
+        $this->publishes([
+            __DIR__.'/../database/migrations' => database_path('migrations'),
+        ]);
     }
 
     /**
